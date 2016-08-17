@@ -3,46 +3,17 @@
 		<title>Test Site git hub</title>
 		<link rel="stylesheet" type="text/css" href="../css/testsite.css">
 		<script src="../js/jquery-3.1.0.js"></script>
-		<script>
-		$(window).scroll(function() {
-
-		
-    var position = $(this).scrollTop();
-	
-    $('.section').each(function() {
-        var target = $(this).offset().top;
-        var id = $(this).attr('id');
-        
-		
-        if (position >= target) {
-		console.log(position)
-		console.log("target "+target)
-            $('#navfixed  ul  li  a').removeClass('active');
-			
-            $('#navfixed  ul  li  a[href="#' + id + '"]').addClass('active');
-        }
-    });
-});
-$(function() {
-   $('a').click(function(){
-    $('html, body').animate({
-        scrollTop: ($( $(this).attr('href') ).offset().top)-100
-    }, 500);
-    return false;
-});
-});
-
-		</script>
-		
+		<script src="../js/script.js"></script>
 	</head>
-	<body >
-	
+	<body>
+		<header id="homesection">
+			<h1 class="hometext">Test site</h1>
+		</header>
+			
 		<div id="container">
-<div id="navfixed">		
-	
-		
+		<div id="navfixed">	
 		<nav>
-			<ul>
+			<ul class="navHighlighter">
 				<li><a href="#homesection"  class="active">Home</a></li>
 				<li><a href="#section1">Section1</a></li>
 				<li><a href="#section2">Section2</a></li>
@@ -50,12 +21,11 @@ $(function() {
 				<li><a href="#section4">Section4</a></li>
 			</ul>	
 		</nav>
-		<hr>
+		
 		</div>	
+	
 	<div id="sectionsdiv">
-		<section id="homesection"  class="section">
-		<h1>home section</h1>
-		</section>
+		
 		<section id="section1" class="section">
 			<h1>section1</h1>
 		</section>
