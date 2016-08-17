@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Test Site</title>
+		<link rel="stylesheet" type="text/css" href="../css/testsite.css">
+		<script src="../js/jquery-3.1.0.js"></script>
+		<script>
+		$(window).scroll(function() {
+
+		
+    var position = $(this).scrollTop();
+	
+    $('.section').each(function() {
+        var target = $(this).offset().top;
+        var id = $(this).attr('id');
+        
+		
+        if (position >= target) {
+		console.log(position)
+		console.log("target "+target)
+            $('#navfixed  ul  li  a').removeClass('active');
+			
+            $('#navfixed  ul  li  a[href="#' + id + '"]').addClass('active');
+        }
+    });
+});
+$(function() {
+   $('a').click(function(){
+    $('html, body').animate({
+        scrollTop: ($( $(this).attr('href') ).offset().top)-100
+    }, 500);
+    return false;
+});
+});
+
+		</script>
+		
+	</head>
+	<body >
+	
+		<div id="container">
+<div id="navfixed">		
+	
+		
+		<nav>
+			<ul>
+				<li><a href="#homesection"  class="active">Home</a></li>
+				<li><a href="#section1">Section1</a></li>
+				<li><a href="#section2">Section2</a></li>
+				<li><a href="#section3">Section3</a></li>
+				<li><a href="#section4">Section4</a></li>
+			</ul>	
+		</nav>
+		<hr>
+		</div>	
+	<div id="sectionsdiv">
+		<section id="homesection"  class="section">
+		<h1>home section</h1>
+		</section>
+		<section id="section1" class="section">
+			<h1>section1</h1>
+		</section>
+		<section id="section2"  class="section">
+			<h1>section2</h1>
+		</section>
+		<section id="section3"  class="section">
+			<h1>section3</h1>
+		</section>
+		<section id="section4"  class="section">
+			<h1>section4</h1>
+		</section>
+	</div>
+		
+		</div>
+	</body>
+</html>
